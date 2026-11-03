@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(ive-got-the-power)
+project(searching-for-the-answer)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,6 +16,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 add_executable(factorial_test tests/factorial_test.cpp src/factorial.cpp)
-add_executable(main main.cpp src/factorial.cpp)
+add_executable(main main.cpp src/factorial.cpp
+  invertedfileindex.h
+  invertedfileindex.cpp)
 
 target_link_libraries(factorial_test PRIVATE Catch2::Catch2WithMain)
