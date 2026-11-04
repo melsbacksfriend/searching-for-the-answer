@@ -16,8 +16,12 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 add_executable(factorial_test tests/factorial_test.cpp src/factorial.cpp)
+add_executable(inverted_file_index_test invertedfileindex.cpp invertedfileindex.h
+  invertedfileindex_test.cpp)
 add_executable(main main.cpp src/factorial.cpp
   invertedfileindex.h
   invertedfileindex.cpp)
 
 target_link_libraries(factorial_test PRIVATE Catch2::Catch2WithMain)
+
+target_link_libraries(inverted_file_index_test PRIVATE Catch2::Catch2WithMain)
